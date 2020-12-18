@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       input[type=text] {
+           background-color: darkgoldenrod;
+       }
+       input[type=text]:focus {
+           background-color: darkred;
+       }
+       a:active {
+           background-color: red;
+       }
+       a:visited {
+           color: springgreen;
+       }
+       a:link {
+           color: yellow;
+       }
+       .block {
+           width: 200px;
+           height: 100px;
+           color: maroon;
+           background-color: slateblue;
+       }
+       .block::before {
+           content: '';
+           position: absolute;
+           width: 90%;
+           height: 5px;
+           background-color: yellowgreen;
+           top: 10%;
+       }
+       .block::after {
+           content: '';
+           position: absolute;
+           width: 90%;
+           height: 5px;
+           background-color: yellowgreen;
+           bottom: 10%;
+       }
+       .block {
+           width: 200px;
+           height: 100px;
+           color: tomato;
+           background-color: violet;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           white-space: nowrap;
+           position: relative;
+       }
+       .popup {
+           display: inline-block;
+           font-size: 2.25em;
+           padding: 1em;
+           color: skyblue;
+           position: relative;
+           border-radius: 5px;
+           background-color: seagreen;
+       }
+       .popup:hover::after {
+           content: 'Всплывающее окно';
+           position: absolute;
+           padding: 1em;
+           top: 50%;
+           left: 25%;
+           border-radius: 5px;
+           white-space: nowrap;
+           background-color: sienna;
+           color: teal;
+       }
+    </style>
+</head>
+<body>
+    <h1>Простой контент</h1>
+    <form action="">
+        <input type="text">
+        <input type="submit" value="Поиск">
+    </form>
+    <a href="#">Простая ссылка</a>
+    <a href="active.html">Ссылка была посещена</a>
+    <a href="not_active.html">Ссылка не была посещена</a>
+    <div class="block">Просто текст</div>
+    <div class="popup">Наведи на меня курсор</div>
+</body>
+</html>
