@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #232323;
+            height: 100vh;
+            overflow: hidden;
+
+        }
+        .tree {
+            position: absolute;
+            bottom: 30%;
+            left: 45%;
+        }
+        .field {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        .card {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            font-family: rum;
+            z-index: 9999;
+
+        }
+        @font-face {
+            font-family: rum;
+            src: url("img/rum.otf") format("opentype");
+        }
+        h1{
+            color: white;
+            font-size: 3em;
+
+        }
+        p ~ div {
+            color: white;
+            font-size: 1.5em;
+        }
+        .snowflake {
+            background-image: url("img/snowflake.png");
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: -50px;
+        }
+        @keyframes falling {
+            to {
+                top: 100vh;
+                transform: rotate(720deg);
+
+            }
+        }
+        .snowflake:nth-child(1) {
+            left: 9vw;
+            animation: falling 12s .2s linear infinite;
+        }
+        .snowflake:nth-child(2) {
+            left: 19vw;
+            animation: falling 14s .4s linear infinite;
+        }
+        .snowflake:nth-child(3) {
+            left: 26vw;
+            animation: falling 18.5s .9s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <img src="img/tree.png" alt="Новогодняя Елка" class="tree" width="400">
+    <img src="img/field.png" alt="Зимнее поле" class="field">
+    <div>
+        <div class="card">
+            <h1>С наступающим новым годом!</h1>
+            <p class="text">
+                <div>Сновым годом! Волшебства</div> 
+            <div>Смеха, счастья и тепла</div></p>
+
+        </div>
+
+    </div>
+</body>
+</html>
