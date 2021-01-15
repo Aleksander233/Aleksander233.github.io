@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+            background-image: url('img/mono.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .logo {
+            color: white;
+            font-size: 6em;
+            font-weight: 900;
+            font-family: fantasy;
+            position: relative;
+            cursor: pointer;
+        }
+        .logo::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 5px;
+            background-color: #e41749;
+            bottom: 0;
+            left: 0;
+            transition: all ease-in-out .5s;
+        }
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 5px;
+            background-color: #e41749;
+           top: 0;
+           right: 0;
+            transition: all ease-in-out .5s;
+        }
+        .logo:hover::before {
+            width: 100%;
+            height: 5px;
+        }
+        .logo:hover::after{
+            width: 100%;
+            height: 5px;
+        }
+        .arrow {
+            width: 25px;
+            height: 25px;
+            border-left: 5px solid #f9ff21;
+            border-bottom: 5px solid #f9ff21;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        BLACK & WHITE
+    </div>
+    <div class="arrow"></div>
+    <div class="container">
+        <div class="title">
+            HELLO WORLD
+        </div>
+        <div class="TEXT">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum animi non consequatur quia iusto nobis blanditiis dicta facere adipisci? Nobis, soluta nemo! Odio excepturi quae quidem ducimus quaerat reiciendis iste!
+        </div>
+        <button>
+            PLAY WITH ME
+        </button>
+    </div>
+</body>
+</html>
