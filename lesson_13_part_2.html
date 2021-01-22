@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            color: white;
+            background-color: indigo;
+            text-align: center;
+            width: 100%;
+            font-family: fantasy;
+        }
+        html {
+            overflow: hidden;
+        }
+        svg {
+            display: block;
+            position: absolute;
+            width: calc(100vw + 40px);
+            bottom: 0;
+        }
+        @keyframes wave {
+            50% {
+                left: 0;
+            }
+        }
+        svg:nth-of-type(1) {
+            left: -20px;
+            animation: wave 4s .4s ease-in-out infinite;
+        }
+        svg:nth-of-type(2) {
+            left: -40px;
+            animation: wave 3s .4s ease-in-out infinite;
+        }
+        svg:nth-of-type(3) {
+            left: -10px;
+            animation: wave 2s .4s ease-in-out infinite;
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="container">
+       <h1>HELLO WORLD</h1>
+       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque labore voluptatibus rerum optio, quam quisquam eum molestiae repellendus beatae, minima, eaque quod enim illo nisi aliquid minus nobis itaque ipsum.</p>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,224L288,32L576,96L864,160L1152,32L1440,0L1440,320L1152,320L864,320L576,320L288,320L0,320Z"></path></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000b76" fill-opacity="1" d="M0,224L48,192C96,160,192,96,288,74.7C384,53,480,75,576,96C672,117,768,139,864,128C960,117,1056,75,1152,48C1248,21,1344,11,1392,5.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,224L48,192C96,160,192,96,288,74.7C384,53,480,75,576,96C672,117,768,139,864,128C960,117,1056,75,1152,48C1248,21,1344,11,1392,5.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+   </div>
+</body>
+</html>
