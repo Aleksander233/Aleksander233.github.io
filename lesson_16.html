@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .grid-container {
+            display: grid;
+            height: 100%;
+            grid-template-rows: 1.5fr 4fr 3fr 2fr;
+            grid-template-columns: 1fr 1.2fr 2fr;
+            grid-template-areas: 
+            "main main nav"
+            "main main icecream"
+            "tasty healthy icecream"
+            "footer footer icecream";
+        }
+
+        main {
+            grid-area: main;
+            background-color: #FCB1B1;
+            position: relative;
+        }
+        .tasty {
+            background-color: #80EEC2;
+            grid-area: tasty;
+        }
+        .healthy {
+            background-color: #F0F696;
+            grid-area: healthy;
+        }
+        footer {
+            background-color: #F5B5FC;
+            grid-area: footer;
+        }
+        nav {
+           grid-area: nav;
+            background-color: #fff;
+            justify-content: space-evenly;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .icecream {
+            background-image: url('ice.jpg');
+            grid-area: icecream;
+            background-color: #ADE2CE;
+            background-position: center;
+            background-size: cover;
+
+
+        }
+        .logo span {
+            font-family: 'Pacifico', cursive;
+            color: white;
+            font-size: 75px;
+            padding: 0 50px;
+            cursor: pointer;
+        }
+        .text, h5, span {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            color: #444444;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-25%);
+            font-size: 25px;
+            padding: 0 50px;
+        }
+        .tasty, .healthy, footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer h5 {
+            color: white;
+        }
+        h5 {
+            font-size: 30px;
+        }
+        .left, .right {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .hamburger > div {
+            width: 35px;
+            height: 5px;
+            background-color: #707070;
+            margin: 6px 0;
+        }
+        .hamburger > div:nth-child(2) {
+            background-color: #ADE2EC;
+        }
+        .right > span {
+            color: #FC6363;
+        }
+        span {
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <main>
+            <div class="logo">
+                <span>
+                    Iceful
+                </span>
+            </div>
+            <div class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum mollitia accusantium eaque ducimus deserunt dignissimos laboriosam cumque rem quos quasi corporis, assumenda tempora, sunt, velit labore! Porro exercitationem quam voluptas!
+
+            </div>
+
+        </main>
+        <div class="tasty">
+            <h5>tasty</h5>
+
+        </div>
+        <div class="healthy">
+            <h5>healthy</h5>
+
+        </div>
+        <footer>
+            <h5>Best ice cream in the world!</h5>
+
+        </footer>
+        <nav>
+            <div class="left">
+                <span>
+                    Home
+                </span>
+                <span>
+                    About
+                </span>
+            </div>
+            <div class="right">
+                <span>
+                    Shop
+                </span>
+                <span class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </span>
+            </div>
+
+        </nav>
+        <div class="icecream">
+
+        </div>
+    </div>
+</body>
+
+</html>
