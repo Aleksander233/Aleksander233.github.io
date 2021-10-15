@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #f4f4f4;
+        }
+        * {
+            font-family: 'Courier New', Courier, monospace;}
+        .navbar {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px ;
+            
+        }
+        .logo {
+            font-size:large ;
+            font-weight: 900;
+        }
+        .menu > a {
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+            
+            
+        }
+        .menu {
+            display: flex;
+            gap: 26px;
+            
+        }
+        .user-panel > a {
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+        }
+        .user-panel > a:nth-of-type(2) {
+            color: white;
+            font-weight: 700;
+            background-color: #00c3ff;
+            padding: 16px 28px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px -15px #8d8d8d;
+            margin-left: 15px;
+        }
+        .header {
+            margin: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            flex-direction: column;
+        }
+        .marketplace {
+            background-color: rgb(149, 176, 255);
+            display: inline-block;
+            border-radius: 7px;
+            padding: 10px;
+            font-weight: 700;  
+        }
+        .marketplace > a {
+            text-decoration: none;
+            color:teal;
+        }
+        .herobox {
+            flex-basis: 50%;
+            align-self: flex-start;
+        }
+        h1 {
+            font-size: 80px;
+        }
+        p {
+            font-size: 18px;
+            color: rgb(32, 29, 29);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Blockmix</div>
+        <div class="menu">
+          <a href="">Why Blockmix</a>
+          <a href="">Features</a>
+          <a href="">Resourse</a>
+          <a href="">Pricing</a>
+
+        </div>
+        <div class="user-panel">
+            <a href="">Log In</a>
+            <a href="">Sing Up</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="herobox">
+           <div class="marketplace">
+            Available on the <a href="">App Store</a>
+            and <a href="">Google Play!</a>
+        </div>
+        <h1>Built Better Chain Advancing Global</h1>
+        <p>Blockmix will make it easy for security and deploy decentralized application on any platform</p>
+        <div class="call-to-action">
+            <a href="">Get Started</a>
+            <a href="">List on Github</a>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
