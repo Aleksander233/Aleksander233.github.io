@@ -23,3 +23,29 @@ console.log(newDiv)
 let itemsContainer = document.querySelector('#items');
 let firstItem = document.getElementsByTagName('li')[0]
 itemsContainer.insertBefore(newDiv, firstItem)
+let button = document.querySelector('#button')
+button.addEventListener('click', buttonClick)
+let navbar = document.querySelector('#navbar')
+function buttonClick() {
+    navbar.textContent = 'Did you push the button?'
+}
+let form = document.querySelector('form');
+let items = document.querySelector('#items');
+form.addEventListener('submit', addItem);
+function addItem(event) {
+    event.preventDefault();
+    let input = document.querySelector('input[type="text"]').value;
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(input));
+    li.className = 'list-group-item';
+    let deleteButton = document.createElement('button');
+    deleteButton.className = 'btn btn-danger btn-sm float-right';
+    deleteButton.appendChild(document.createTextNode('X'));
+    li.appendChild(deleteButton)
+    items.appendChild(li);
+}
+items.addEventListener('click', deleteItem);
+function deleteItem(event) {
+    let li = event.target.parentElement;
+    items.removeChild(li);
+}
