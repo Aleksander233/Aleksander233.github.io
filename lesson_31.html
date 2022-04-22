@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #road {
+            height: 80%;
+            width: 100%;
+            background-color: #43d8c9;
+        }
+        #status {
+            height: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #status > #bar {
+            width: 50%;
+            height: 80%;
+            background-color: #95389e;
+
+        }
+        .boat {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all ease .05s;
+        }
+        .boat > h3 {
+            color: #fff;
+        }
+        .boat.winner {
+            top: 50%;
+            left: 50% !important;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        .boat.winner::before {
+            content: '👎🏻WINNER👎🏻';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            white-space: nowrap;
+            font-size: 2em;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="road"></div>
+    <div id="status">
+        <div id="bar">Тут будет важная информация о гонке</div>
+    </div>
+    <script src="lesson_31.js"></script>
+</body>
+</html>
