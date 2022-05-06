@@ -1,50 +1,64 @@
-let road = document.querySelector('#road')
-let status = document.querySelector('#status')
-let Boat = function(name, color, size) {
-    this.element = null;
-    this.name = name;
-    this.color = color;
-    this.width = size;
-    this.height = size / 2;
-    this.posX = 0
-    this.create = function () {
-        this.element = document.createElement('div');
-        this.element.className = 'boat'
-        this.element.style.width = this.width + "px"
-        this.element.style.height = this.height + "px"
-        this.element.style.backgroundColor = this.color
-        this.element.innerHTML = '<h3>' + this.name + '</h3>'
-        road.append(this.element)
+let canvas = document.querySelector('#canvas');
+let ctx = canvas.getContext("2d");
+let Circle = function(x,y, size, color) {
+    this.x = x
+    this.y = y
+    this.size = size
+    this.color = color
+    this.dx = 5
+    this.dy = 4
+    this.drawCircle = function() {
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        ctx.fillStyle = this.color
+        ctx.fill()
     }
-    this.move = function () {
-        this.posX += Math.random() * 5
-        this.element.style.left = this.posX + "px"
+    this.move = function() {
+        
+        this.x += this.dx;
+        this.y += this.dy;
+        this.collision()
     }
-    this.checkCollision = function () {
-        if (this.posX + this.width > road.clientWidth) {
-            return true
+    this.collision = function() {
+        if (this.x + this.size > canvas.clientWidth || this.x - this.size < 0) {
+            this.dx *= -1;
         }
-        return false
-    }
-    this.winner = function () {
-        this.element.className = 'boat winner'
-    }
-}
-boat_1 = new Boat('Flyer', 'blue', 100);
-boat_1.create();
-boat_2 = new Boat('Glider', 'red', 100);
-boat_2.create();
-boat_3 = new Boat('Skyer', 'yellow', 100);
-boat_3.create();
-let boat = [boat_1, boat_2, boat_3];
-gameLoop = setInterval(game, 30);
-function game() {
-    for (let i = 0; i < boat.length; i++) {
-        let b = boat[i]
-        b.move()
-        if (b.checkCollision()) {
-            b.winner()
-            clearInterval(gameLoop)
+        if (this.y + this.size > canvas.clientHeight || this.y - this.size < 0) {
+            this.dy *= -1;
         }
     }
+    this.detectCollision = function(other) {
+        for (let i = 0; i < other.length; i++) {
+            const el  = other[i];
+            if (el != this) {
+                let distanceX = this.x - el.x
+                let distanceY = this.y - el.y
+                let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY)
+                if (distance < this.size + el.size) {
+                    let tmX = this.dx
+                    let tmY = this.dy
+                    this.dx = el.dx
+                    this.dy = el.dy
+                    el.dx = tmX
+                    el.dy = tmY
+                }
+            }
+        }
+    }
+
 }
+let c1 = new Circle(20,20,20,'red')
+let c2 = new Circle(50,75,30,'green')
+let c3 = new Circle(35,150,15,'blue')
+let circles = [c1,c2,c3]
+function update() {
+    ctx.clearRect(0,0,canvas.clientWidth, canvas.clientHeight)
+    for (let i = 0; i < circles.length; i++) {
+        const c = circles[i]
+        c.move()
+        c.detectCollision(circles)
+        c.drawCircle()
+        }
+    requestAnimationFrame(update)
+}
+update()
