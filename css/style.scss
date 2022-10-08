@@ -1,4 +1,26 @@
 @import './reset';
 @import './colors';
+@import './breakpoints';
 @import './text_setup';
 @import './navbar';
+@import './header';
+@import './story';
+@import './ability';
+@import './example';
+@import './contact';
+@import './footer';
+
+html, body {
+    overflow-x: hidden;
+}
+.section-navbar-wrapper, header, footer > .section-footer-wrapper, section {
+    max-width: 1360px;
+    margin: auto;
+}
+
+@include media('<=tablet') {
+    .section-navbar-wrapper, header, footer > .section-footer-wrapper, section {
+        max-width: 608px;
+    }
+}
+

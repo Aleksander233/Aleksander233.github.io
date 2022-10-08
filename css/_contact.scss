@@ -1,0 +1,84 @@
+.section-contact {
+    margin-bottom: 130px;
+
+    @include media('<=tablet') {
+        margin-bottom: 80px;
+    }
+    @include media('<=phone') {
+        margin-bottom: 130px;
+    }
+    &-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+
+        &__title {
+            font-size: 40px;
+            color: $dark-color;
+            margin-bottom: 50px;
+            
+            @include media('<=tablet') {
+                font-size: 25px;
+                margin-bottom: 40px;
+                white-space: nowrap;
+            }
+            @include media('<=phone') {
+                font-size: 12px;
+                margin-bottom: 30px;
+            }
+        }
+
+        &__form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @include media('<=tablet') {
+                width: 450px;
+            }
+            @include media('<=phone') {
+                width: 280px;
+            }
+
+            &-input {
+                input {
+                    background-color: $lightblue-color;
+                    border: 0;
+                    padding: 17px 190px 17px 20px;
+                    border-radius: 5px 0 0 5px;
+                    
+                    @include media('<=tablet') {
+                        font-size: 14px;
+                        padding: 17px 190px 17px 24px;
+                    }
+                    @include media('<=phone') {
+                        font-size: 8px;
+                        padding: 17px 100px 17px 10px;
+                    }
+                }
+            }
+            &-button {
+                input {
+                    background-color: $emerald-color;
+                    border: 0;
+                    padding: 20px 27px;
+                    font-size: 10px;
+                    color: #fff;
+                    font-weight: bold;
+                    border-radius: 0 5px 5px 0;
+                    
+                    @include media('<=tablet') {
+                        font-size: 10px;
+                        padding: 20px 25px;
+                    }
+                    @include media('<=phone') {
+                        padding: 16px 25px;
+                    }
+                }
+            }
+        }
+    }
+}

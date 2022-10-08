@@ -1,0 +1,108 @@
+.section-examples {
+    margin-bottom: 150px;
+
+    @include media('<=tablet') {
+        margin-bottom: 135px;
+    }
+    @include media('<=phone') {
+        margin-bottom: 105px;
+    }
+
+    &-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+
+        &__title {
+            font-size: 45px;
+            color: $dark-color;
+            margin-bottom: 50px;
+
+            @include media('<=tablet') {
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+            @include media('<=phone') {
+                font-size: 18px;
+            }
+        }
+        &-cards {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            @include media('<=tablet') {
+                flex-direction: column;
+            }
+            .card {
+                height: 400px;
+                width: 300px;
+                border: 1px solid #95989A;
+                margin: 0 2.5px;
+                box-shadow: 0 3px 6px 0 rgba($color: #3D3636, $alpha: 0.35);
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+
+                @include media('<=tablet') {
+                    margin-bottom: 40px;
+                    width: 450px;
+                }
+                @include media('<=phone') {
+                    margin-bottom: 25px;
+                    max-width: 280px;
+                }
+                &__image {
+                    flex-basis: 50%;
+                    width: 100%;
+                    background-color: black;
+                    background-image: url('../img/example.png');
+                    background-size: auto;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border-radius: 5px 5px 0 0;
+                }
+                &-footer {
+                    flex-basis: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    padding: 0 35px;
+
+                    &__title {
+                        h5 {
+                            a {
+                                display: inline-block;
+                                font-family: $arial;
+                                font-size: 25px;
+                                font-weight: bold;
+                                margin-bottom: 25px;
+                                text-decoration: none;
+                                color: #111E43;
+
+                                @include media('<=tablet') {
+                                    font-size: 20px;
+                                }
+                                @include media('<=phone') {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    &__subtitle {
+                        p {
+                            font-family: $arial;
+                            color: $emerald-color;
+                            font-size: 12px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,11 +9,112 @@
         justify-content: space-between;
         align-items: center;
         padding: 14px;
+        background-color: $sea-color;
+        z-index: 100;
+        
+        @include media('<=phone') {
+            padding: 16px 37px;
+        }
+
         &__logo {
             a {
                 color: #fff;
                 text-decoration: none;
                 font-size: 22px;
+            }
+        }
+        
+        .links {
+            display: flex;
+            .menu-hamburger{
+                .toggle-links {
+                    background-color: $sea-color;
+                    top: -140px;
+                    left: 0;
+                    z-index: -1;
+                    position: absolute;
+                    visibility: hidden;
+                    width: 100%;
+                    transition: all ease .5s;
+                    &__link {
+                        width: 100%;
+                        &:hover {
+                            background-color: $emerald-color;
+                            transition: color ease .25s;
+                            a {
+                                color: #000;
+                            }
+                        }
+                        a {
+                            display: inline-block;
+                            padding: 15px;
+                            color: #fff;
+                            width: 100%;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            
+            &__link {
+                @include media('<=phone') {
+                    display: none;
+                }
+                a {
+                    font-family: $arial;
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 16px;
+                    margin: 0 12.5px;
+                }
+            }
+
+            @include media('<=phone') {
+                .menu-hamburger {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    &.open {
+                        .menu-hamburger__button {
+                            transform: translateX(-35px);
+                            background: transparent;
+                        }
+                        .menu-hamburger__button::before {
+                            transform: rotate(45deg) translate(25px, -25px);
+                        }
+                        .menu-hamburger__button::after{
+                            transform: rotate(-45deg) translate(25px, 25px);
+                        }
+                        .toggle-links {
+                            top: 60px;
+                            visibility: visible;
+                        }
+                    }
+                       
+                    &__button{
+                        width: 30px;
+                        height: 3px;
+                        background-color: #fff;
+                        
+                        &::before, &::after {
+                            content: '';
+                            position: absolute;
+                            width: 30px;
+                            height: 3px;
+                            background-color: #fff;
+                        }
+                        &::before {
+                            transform: translateY(-9px);
+                        }
+                        &::after {
+                            transform: translateY(9px);
+                        }
+                    }
+                }
             }
         }
     }
